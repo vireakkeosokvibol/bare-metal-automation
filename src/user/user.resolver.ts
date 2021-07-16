@@ -5,6 +5,6 @@ import { UserModel } from './user.model';
 export class UserResolver {
   @Query(returns => UserModel)
   async user(): Promise<UserModel> {
-    return { id: 'a', email: 'test' }
+    return { id: 'a', email: 'test' };
   }
 }

@@ -5,9 +5,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 @Module({
-  imports: [GraphQLModule.forRoot({
-    autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-  }), UserModule],
+  imports: [
+    GraphQLModule.forRoot({
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+    }),
+    UserModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
