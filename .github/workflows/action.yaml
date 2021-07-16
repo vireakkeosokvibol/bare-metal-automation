@@ -12,9 +12,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install --global yarn
-      - run: yarn
-      - run: yarn run build
-      - run: docker build . --file Dockerfile -t bare-metal-automation/bare-metal-automation
+      - run: docker build . -t bare-metal-automation/bare-metal-automation
         env:
           CI: true
